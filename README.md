@@ -1,50 +1,24 @@
 # Mrówka Langtona
 
-Program symulujący mrówkę Langtona, prosty automat komórkowy, który chodzi po dwuwymiarowej siatce i zmienia kolor pól oraz swój kierunek według prostych zasad.
+## Opis
+Ten program oblicza i wizualizuje kolejne etapy mrówki Langtona, prostego automatu komórkowego, który porusza się po dwuwymiarowej siatce zgodnie z następującymi zasadami:
+
+- Mrówka znajduje się w komórce białej, wykonuje: obrót o 90 stopni w prawo, zmienia kolor komórki na przeciwny,  przesuwa się o jedną komórkę do przodu
+- Mrówka znajduje się w komórce czarnej, wykonuje: obrót o 90 stopni w lewo, zmienia kolor komórki na przeciwny,  przesuwa się o jedną komórkę do przodu
+
+Program jest napisany w języku C i używa znaków Unicode do rysowania mapy.
 
 ## Sposób użycia
+Aby uruchomić program, należy skompilować plik `ant.c` za pomocą kompilatora C, np. `gcc ant.c -o ant`, a następnie uruchomić plik wykonywalny `ant`, np. `./ant`.
 
-Program można uruchomić z linii poleceń, podając następujące opcje i argumenty:
+Program poprosi użytkownika o podanie następujących parametrów wejściowych:
 
-`langton [opcje] m n i name`
+- Liczbę wierszy planszy m
+- Liczbę kolumn planszy n
+- Liczbę iteracji i
+- Początkowy kierunek mrówki (0 - góra, 1 - prawo, 2 - dół, 3 - lewo)
 
-Opcje:
-
-- `-h` wyświetla pomoc
-- `-l plik` wczytuje planszę z pliku
-- `-g fill` generuje planszę z losowymi polami czarnymi
-
-Argumenty:
-
-- `m` liczba wierszy planszy
-- `n` liczba kolumn planszy
-- `i` liczba iteracji
-- `name` przedrostek plików wynikowych
-
-Przykłady:
-
-- `langton 10 10 100 langton` symuluje mrówkę Langtona na pustej planszy 10x10 przez 100 iteracji i zapisuje wyniki do plików `langton_1`, `langton_2`, ..., `langton_100`
-- `langton -l board.txt 50 output` wczytuje planszę z pliku `board.txt` i symuluje mrówkę Langtona przez 50 iteracji i zapisuje wyniki do plików `output_1`, `output_2`, ..., `output_50`
-- `langton -g 20 20 20 200 random` generuje planszę 20x20 z 20% polami czarnymi i symuluje mrówkę Langtona przez 200 iteracji i zapisuje wyniki do plików `random_1`, `random_2`, ..., `random_200`
+Po wprowadzeniu parametrów, program wyświetli planszę na stdout, umieszczając mrówkę na środku planszy i wykonując podaną liczbę iteracji, rysując planszę po każdym kroku mrówki.
 
 ## Wymagania
-
-Program wymaga następujących bibliotek i narzędzi:
-
-- kompilator języka C, np. gcc
-- biblioteka standardowa języka C, np. stdlib.h, stdio.h, unistd.h
-- biblioteka do obsługi znaków Unicode, np. wchar.h, locale.h
-  
-# Wnioski
-
-Program mrówka Langtona jest prostym, ale interesującym przykładem automatu komórkowego, który pokazuje, jak proste zasady mogą prowadzić do złożonych zachowań. Program pozwala na symulację mrówki Langtona na różnych planszach, wczytywanych z pliku lub generowanych losowo, i zapisywanie lub wypisywanie wyników na bieżąco. Program jest napisany w języku C, z użyciem znaków Unicode do rysowania mapy, i korzysta z funkcji getopt do przetwarzania argumentów wywołania.
-
-Program ma jednak pewne ograniczenia i możliwości rozwoju. Po pierwsze, program nie sprawdza poprawności znaków w pliku z planszą, co może prowadzić do błędów lub nieoczekiwanych wyników. Po drugie, program nie obsługuje innych wariantów mrówki Langtona, takich jak mrówka turmitowa, która ma więcej kolorów i kierunków. Po trzecie, program nie ma graficznego interfejsu użytkownika, co mogłoby ułatwić obsługę i wizualizację symulacji. Po czwarte, program nie ma funkcji do analizy i porównania wyników symulacji, takich jak liczba kroków, średnia odległość, entropia, itp.
-
-Program mrówka Langtona jest więc ciekawym i edukacyjnym projektem, który pokazuje, jak z prostych zasad mogą powstawać złożone wzorce. Program może być używany do nauki i zabawy, ale także do dalszego rozwoju i badania własności i zachowań mrówki Langtona i innych automatów komórkowych.
-
-# Autor
-
-Tworzenie programu mrówka Langtona było dla mnie ciekawym i wyzwającym doświadczeniem. Nauczyłem się wielu nowych rzeczy o automatach komórkowych, języku C, znakach Unicode i funkcji getopt. Cieszyłem się, że mogłem wykorzystać moją kreatywność i umiejętności do stworzenia czegoś użytecznego i edukacyjnego. Byłem też zaskoczony i pod wrażeniem, jak z prostych zasad mogą powstawać złożone i piękne wzorce. Podziwiam pracę i pomysłowość naukowców i programistów, którzy zajmują się badaniem i rozwojem mrówki Langtona i innych automatów komórkowych.
-
-
+Program wymaga systemu operacyjnego, który obsługuje znaki Unicode i kompilatora C, który wspiera standard C99 lub nowszy. Program nie używa żadnych zewnętrznych bibliotek ani zasobów.
