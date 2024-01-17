@@ -19,3 +19,4 @@ dir - kierunek początkowy mrówki (0 - góra, 1 - prawo, 2 - dół, 3 - lewo)
 ./bin/mrowka 10 20 2000 0 25
 
 To polecenie uruchomi symulację mrówki Langtona na planszy o wymiarach 10x20, wykonując 2000 iteracji. Na początku symulacji 25% pól planszy będzie czarnych, a mrówka będzie skierowana w górę. Program zapisze ostatnie 1000 iteracji do plików “1001.txt” do “2000.txt” w folderze “out”.
+
