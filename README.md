@@ -1,8 +1,8 @@
-**Program mrówka**
+**Program mrówka** -
 
 Program symuluje zachowanie automatu komórkowego zwanego mrówką Langtona. Program zapisuje 1000 ostatnich iteracji symulacji do plików tekstowych w folderze “out”.
 
-**Uruchomienie programu**
+**Uruchomienie programu** -
 
 Program należy uruchomić z linii poleceń, podając następujące argumenty:
 
@@ -14,7 +14,7 @@ i - liczba iteracji symulacji
 dir - kierunek początkowy mrówki (0 - góra, 1 - prawo, 2 - dół, 3 - lewo) 
 % - procent zamalowanych na czarno pól planszy na początku symulacji
 
-**Przykład**
+**Przykład** -
 
 ./bin/mrowka 10 20 2000 0 25
 
