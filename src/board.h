@@ -3,6 +3,6 @@
 
 int**create_board(int m,int n);
 void destroy_board(int**board,int m);
-void save_board(int**board,int m,int n,Ant*ant, int k);
+void save_board(int**board,int m,int n,Ant*ant, int k, char* f);
 
 #endif

@@ -20,10 +20,10 @@ void destroy_board(int**board,int m){ //definiujemy funkcję, która zwalnia pam
 }
 
 //funkcja, która rysuje planszę na ekranie
-void save_board(int**board,int m,int n,Ant*ant, int k){
+void save_board(int**board,int m,int n,Ant*ant, int k, char* f){
     FILE* out;
     char filename[100];
-    sprintf(filename, "out/%d.txt", k);
+    sprintf(filename, "out/%s_%d.txt",f, k);
     out = fopen(filename, "w");
     fprintf(out,LINE_DOWN_RIGHT); //drukujemy znak rogu dolnego prawego
     for(int j=0;j<n;j++){ //dla każdej kolumny
