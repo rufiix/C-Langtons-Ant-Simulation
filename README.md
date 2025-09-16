@@ -1,22 +1,33 @@
-**Program mrówka** 
+# Langton's Ant Simulation in C
 
-Program symuluje zachowanie automatu komórkowego zwanego mrówką Langtona. Program zapisuje 1000 ostatnich iteracji symulacji do plików tekstowych w folderze “out”.
+## Overview
 
-**Uruchomienie programu** 
+This project is a C-based simulation of Langton's Ant, a two-dimensional universal Turing machine with a very simple set of rules. The ant moves on a grid of black and white cells, following a deterministic algorithm that leads to complex emergent behavior. Initially, the ant's movement appears chaotic, but after about 10,000 steps, it famously builds a recurring "highway" pattern.
 
-Program należy uruchomić z linii poleceń, podając następujące argumenty:
+This implementation allows users to configure the simulation's parameters, such as board dimensions, number of iterations, and the ant's starting conditions. The program outputs the state of the board to text files for each of the final 1000 iterations.
 
-./bin/mrowka -n [n] -m [m] -i [i] -d [dir] -p [%]
+---
 
-n - liczba wierszy planszy 
-m - liczba kolumn planszy 
-i - liczba iteracji symulacji 
-dir - kierunek początkowy mrówki (0 - góra, 1 - prawo, 2 - dół, 3 - lewo) 
-% - procent zamalowanych na czarno pól planszy na początku symulacji
+## Features
 
-**Przykład** 
+* **Configurable Simulation**: Set board size, iteration count, initial ant direction, and the percentage of initially black cells via command-line arguments.
+* **Dynamic Board Generation**: The grid is dynamically allocated based on user-defined dimensions.
+* **Step-by-Step Simulation**: The core logic processes the ant's movement and board state changes for each iteration.
+* **State Output**: The program saves the last 1000 states of the simulation board as individual text files in the `out/` directory.
+* **Modular Codebase**: The source code is logically divided into modules for the ant, the board, and the main application logic, as described in the project report.
 
-./bin/mrowka -n 10 -m 20 -i 2000 -d 0 -p 25
+---
 
-To polecenie uruchomi symulację mrówki Langtona na planszy o wymiarach 10x20, wykonując 2000 iteracji. Na początku symulacji 25% pól planszy będzie czarnych, a mrówka będzie skierowana w górę. Program zapisze ostatnie 1000 iteracji do plików “1001.txt” do “2000.txt” w folderze “out”.
+## How to Compile and Run
 
+### Prerequisites
+
+* A C compiler (e.g., `gcc`)
+* `make` utility
+
+### Compilation
+
+To compile the project, run the `make` command from the root directory. This will compile the source files from `src/` and place the executable `mrowka` into the `bin/` directory.
+
+```bash
+make all
